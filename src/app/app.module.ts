@@ -21,13 +21,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 import { ConversationComponent } from './conversation/conversation.component';
 import { DataService } from './data.service';
+import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ConversationComponent
+    ConversationComponent,
+    ScrollToBottomDirective
   ],
   imports: [
     BrowserModule,

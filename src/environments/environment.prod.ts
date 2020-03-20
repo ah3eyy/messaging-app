@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  APPURL: 'http://localhost/turbo/public/api/',
+  //APPURL: 'http://localhost/turbo/public/api/',
+  APPURL: 'https://tuboapi.gurus.ng/api/',
   firebase: {
     apiKey: "AIzaSyCSwn24gBySUmY8pKsKPRWJoiBsTxTpTIg",
     authDomain: "tubo-test-fabe3.firebaseapp.com",
