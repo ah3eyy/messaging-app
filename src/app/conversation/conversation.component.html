@@ -1,0 +1,52 @@
+<div
+    style="width: 100%; height: 100%; background-color: #ffffff; position: absolute; left: 0; right: 0; bottom: 0;   padding-top: 10px;">
+
+    <div class="col-lg-4" style="margin: 0 auto;">
+
+        <div style="display: flex; flex-direction: column; justify-content: end;">
+
+            <div style='width: 100%; height: 500px; background-color: red;'>
+
+                <div style="margin: auto; text-align: center; padding-top: 50px;" *ngIf='nomessage'>
+
+                    No Conversation
+
+                </div>
+
+
+                <div *ngIf='!nomessage' style="overflow:auto; height: 500px;">
+
+                    <mat-list role="list">
+
+                        <mat-list-item role="listitem" *ngFor='let user of data' style="cursor: pointer;">
+                            <span [ngClass]="{'alignright': user?.fetch_from_user_details?.username != getParam}">
+                                {{user?.message}}</span>
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                        <mat-list-item role="listitem" style="cursor: pointer;" *ngIf='newmessage'>
+                            <span class="alignright">
+                                {{newmessage}}</span>
+                        </mat-list-item>
+
+                    </mat-list>
+
+
+                </div>
+
+            </div>
+
+            <div style="width: 100%;">
+                <form [formGroup]='messagecontent'>
+                    <textarea style="width: 100%;" rows="4" (change)='updateinput($event)'
+                        formControlName='message'></textarea>
+                </form>
+                <button (click)='messageSend()'>Send Message</button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>

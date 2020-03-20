@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessagingService } from './messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'message-app';
+  title = 'push-notification';
+  message;
+
+  constructor(private messagingService: MessagingService) { }
+  
+  ngOnInit() {
+
+    
+  }
+
 }

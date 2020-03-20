@@ -1,0 +1,41 @@
+<section class="login-bg">
+    <div class='sm-px-2rem'>
+        <div class="lg-pl-7rem">
+            <img src="assets/img/logo-white.svg" />
+        </div>
+        <div class="row mt-8rem sm-mt">
+            <!-- <div class="col-lg-5 col-sm-12 my-auto sm-display-none">
+                <div class="lg-pl-7rem">
+                    <h2 class="font-bold font72 text-white line-height-one">Hello<br /> Admin!</h2>
+                    <p class="font24 text-white">
+                        Sign into your dashboard,<br />
+                        See how tubo is doing today.
+                    </p>
+                </div>
+
+            </div> -->
+            <div class="col-lg-3 col-sm-12 sm-display-none"></div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card p-4rem sm-px-2rem">
+                    <h3 class="font32 font-light text-center mb-4">Welcome Back</h3>
+                    <form [formGroup]='loginForm' (ngSubmit)='login(loginForm)'>
+                        <div class="p-relative">
+                            <input type="email" class="common-input form-control my-4" placeholder="Work email address"
+                                formControlName='username' />
+                            <span class="input-icon"><img src="assets/img/message.png" /></span>
+                        </div>
+                        <div class="p-relative">
+                            <input type="password" class="common-input form-control mt-4 mb-2" placeholder="Password"
+                                formControlName='password' />
+                            <span class="input-icon"><img src="assets/img/password.png" /></span>
+                        </div>
+                        <a href="#" class="font12 text-purple">Forgot Password?</a>
+                        <mat-spinner diameter='30' style="margin: 0 auto;" *ngIf='submitted'></mat-spinner>
+                        <button type="submit" class="btn form-control text-center text-white bg-purple mt-4 mb-4"
+                            *ngIf='!submitted'>Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
