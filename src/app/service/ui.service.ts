@@ -44,7 +44,7 @@ export class UiService {
       message,
       action,
       config || {
-        duration: 500,
+        duration: 100,
         horizontalPosition: "right",
         verticalPosition: "top"
       }

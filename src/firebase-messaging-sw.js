@@ -1,5 +1,6 @@
 importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase-messaging.js');
+
 firebase.initializeApp({
     apiKey: "AIzaSyCSwn24gBySUmY8pKsKPRWJoiBsTxTpTIg",
     authDomain: "tubo-test-fabe3.firebaseapp.com",
@@ -10,4 +11,5 @@ firebase.initializeApp({
     appId: "1:896499439033:web:433534ef3454bcce5e9268",
     measurementId: "G-65T78BE8VQ"
 });
+
 const messaging = firebase.messaging();

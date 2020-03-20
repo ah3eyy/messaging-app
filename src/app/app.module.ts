@@ -20,6 +20,7 @@ import { AuthHttpInterceptor } from './service/auth-http-interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 import { ConversationComponent } from './conversation/conversation.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ConversationComponent } from './conversation/conversation.component';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
   ],
-  providers: [MessagingService, AsyncPipe, AuthService,
+  providers: [MessagingService, AsyncPipe, AuthService, DataService,
     UiService,
     {
       provide: HTTP_INTERCEPTORS,

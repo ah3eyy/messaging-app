@@ -5,7 +5,7 @@
 
         <div style="display: flex; flex-direction: column; justify-content: end;">
 
-            <div style='width: 100%; height: 500px; background-color: red;'>
+            <div style='width: 100%; height: 500px; background-color: #9225AE;'>
 
                 <div style="margin: auto; text-align: center; padding-top: 50px;" *ngIf='nomessage'>
 
@@ -14,18 +14,17 @@
                 </div>
 
 
-                <div *ngIf='!nomessage' style="overflow:auto; height: 500px;">
+                <div *ngIf='!nomessage'
+                    style="overflow:auto; height: 500px; display:flex; flex-direction: column-reverse;" #scrollMe
+                    [scrollTop]="scrollMe.scrollHeight">
 
-                    <mat-list role="list">
+
+                    <mat-list role="list" style="height: auto;">
 
                         <mat-list-item role="listitem" *ngFor='let user of data' style="cursor: pointer;">
                             <span [ngClass]="{'alignright': user?.fetch_from_user_details?.username != getParam}">
                                 {{user?.message}}</span>
                             <mat-divider></mat-divider>
-                        </mat-list-item>
-                        <mat-list-item role="listitem" style="cursor: pointer;" *ngIf='newmessage'>
-                            <span class="alignright">
-                                {{newmessage}}</span>
                         </mat-list-item>
 
                     </mat-list>
@@ -40,10 +39,12 @@
                     <textarea style="width: 100%;" rows="4" (change)='updateinput($event)'
                         formControlName='message'></textarea>
                 </form>
-                <button (click)='messageSend()'>Send Message</button>
+                <button (click)='messageSend()' *ngIf='!submit'>Send Message</button>
+                <mat-spinner diameter='30' *ngIf='submit'></mat-spinner>
             </div>
 
 
+            <!-- {{ messages | async | json }} -->
         </div>
 
 
